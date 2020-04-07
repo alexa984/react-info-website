@@ -75,7 +75,17 @@
         <div class="card">
             <div class="paragraph-header">DOM структура и как React работи с нея</div>
             <hr class="divider" />
-            <p id="dom-structure"></p>
+            <p id="dom-structure">
+                Виртуалното дърво - Virtual DOM(VDOM) е концепция, въведена в някои JavaScript библиотеки, включително
+                React, която се изгражда над браузър API-тата.
+                Идеята ѝ тук е да държи виртуална версия на истинския DOM в паметта и да се
+                синхронизира с него чрез ReactDOM библиотеката например. Този процес се нарича
+                reconciliation. По този начин не се грижим за ръчна промяна на DOM елементите и прихващане
+                на някои събития, а единствено оказваме в какво състояние(state) искаме те да бъдат.
+                Библиотеката се грижи за останалото. Към момента с React 16 се използва Fiber като reconciliation
+                engine.
+
+            </p>
         </div>
         <div class="card">
             <div class="paragraph-header">Основни концепции и примери</div>
