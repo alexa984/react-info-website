@@ -1,0 +1,76 @@
+div> p:target {
+    animation: highlight 2s ease; 
+}
+@keyframes highlight {
+    0% { border-left-color:#ff69b4; }
+    100% { border-left-color: white; }
+}
+
+div > p {
+    border-left: 30px solid white;
+    transition: all 0.5s ease; 
+    text-align: justify;
+    text-justify: inter-word;
+    margin: 30px 0px;
+}
+body {
+    background-color: #f1f1f1;
+}
+.container {
+    width: 50%;
+    text-align: center;
+    margin: 100px 25% auto;
+}
+
+li a {
+    color: #483d8b;
+    font-weight: bold;
+
+}
+li {
+    margin: 10px 0px;
+}
+
+.content {
+    margin: 30px 0px 50px 0px;
+    display: inline-block;
+    color: #ff69b4;
+}
+
+.container-image {
+    width: 100%;
+}
+
+.card {
+    padding: 5% 10%;
+    background-color: white;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
+    margin: 5% 0%;
+}
+
+.navbar {
+    background-color: #333;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: white;
+    top: 0;
+    left: 0;
+    border-bottom: 5px solid #483d8b;
+}
+
+.divider {
+    border: none;
+    height: 1px;
+    color: #d3d3d3;
+    background-color: #d3d3d3;
+    margin: 2% auto;
+    text-align: center;
+} 
+
+.paragraph-header {
+    font-size: 15pt;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 10%;
+}
