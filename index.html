@@ -6,16 +6,26 @@
     <meta charset="UTF-8">
     <meta name="keywords" content="React, JS, ReactJS, JavaScript, script, library, html">
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="javascript/openMenu.js"></script>
 </head>
 
 <body>
     <div class="navbar">
-        <flex>
-        <h1>66. ReactJS</h1>
-        <!-- <flex id="menu">
-            <img src="img/hamburger_menu.png" alt="menu" />
-        </flex> -->
-        </flex>
+        <h1 id="title"><a href="index.html">66. ReactJS</a></h1>
+        <div id="menu-icon" class="menu-dropdown">
+            <img src="img/hamburger_menu.png" alt="menu" onclick="openMenu()" />
+            <div id="menu-content">
+                <ul class="no-bullets">
+                    <li><a href="content.html#overview">Въведение</a></li>
+                    <li><a href="content.html#history">История</a></li>
+                    <li><a href="content.html#usage">Къде се използва и за какви цели?</a></li>
+                    <li><a href="content.html#dom-structure">DOM структура и как React работи с нея</a></li>
+                    <li><a href="content.html#basic-concepts">Основни концепции и примери</a></li>
+                    <li><a href="content.html#technologies">Свързани технологии</a></li>
+                    <li><a href="content.html#why-react">Защо React?</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
 
     <div class="container">

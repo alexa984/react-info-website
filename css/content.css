@@ -23,4 +23,9 @@ div > p {
 
 #sources {
   text-align: left;
+  font-size: 1.35em;
+}
+
+.source {
+  margin: 10px 0px;
 }

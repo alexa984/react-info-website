@@ -7,17 +7,27 @@
     <meta name="keywords" content="React, JS, ReactJS, JavaScript, script, library, html">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/content.css">
+    <script src="javascript/openMenu.js"></script>
 </head>
 
 <body>
-    <div class="navbar">
-        <flex>
-        <h1>66. ReactJS</h1>
-        <!-- <flex id="menu">
-            <img src="img/hamburger_menu.png" alt="menu" />
-        </flex> -->
-        </flex>
+  <div class="navbar">
+    <h1 id="title"><a href="index.html">66. ReactJS</a></h1>
+    <div id="menu-icon" class="menu-dropdown">
+        <img src="img/hamburger_menu.png" alt="menu" onclick="openMenu()" />
+        <div id="menu-content">
+            <ul class="no-bullets">
+                <li><a href="content.html#overview">Въведение</a></li>
+                <li><a href="content.html#history">История</a></li>
+                <li><a href="content.html#usage">Къде се използва и за какви цели?</a></li>
+                <li><a href="content.html#dom-structure">DOM структура и как React работи с нея</a></li>
+                <li><a href="content.html#basic-concepts">Основни концепции и примери</a></li>
+                <li><a href="content.html#technologies">Свързани технологии</a></li>
+                <li><a href="content.html#why-react">Защо React?</a></li>
+            </ul>
+        </div>
     </div>
+</div>
 
     <div class="container">
         <div class="card">
@@ -320,55 +330,72 @@
           <div class="paragraph-header">Използвани източници:</div>
           <hr class="divider" />
           <div id="sources">
+            <div class="source">
             <a href="https://www.taniarascia.com/getting-started-with-react/">[1]
                 https://www.taniarascia.com/getting-started-with-react/</a>
             Написано на 20.08.2018 oт Tania Rascia, последно посетен на 05.04.2020
-            <br>
+            </div>
+            <div class="source">
             <a href="https://skillcrush.com/blog/what-is-react-js/">[2]
                 https://skillcrush.com/blog/what-is-react-js/</a>
             Написано от Scott Morris, последно посетен на 05.04.2020
-            <br>
+            </div>
+            <div class="source">
             <a href="https://blog.risingstack.com/the-history-of-react-js-on-a-timeline">[3]
                 https://blog.risingstack.com/the-history-of-react-js-on-a-timeline</a> Написано от Ferenc Hamori,
-            последно посетен на 05.04.2020<br>
+            последно посетен на 05.04.2020
+          </div>
+          <div class="source">
             <a href="http://thenewstack.io/javascripts-history-and-how-it-led-to-reactjs/">[4]
                 http://thenewstack.io/javascripts-history-and-how-it-led-to-reactjs/</a>
             Написано от Chris Dawson на 25.07.2014, последно посетен на 05.04.2020
-            <br>
+            </div>
+            <div class="source">
             <a href="https://medium.com/react-native-development/a-brief-history-of-react-native-aae11f4ca39">[5]
                 https://medium.com/react-native-development/a-brief-history-of-react-native-aae11f4ca39</a>
             Написано
-            от Shoutem на 3.10.2016, последно посетен на 05.04.2020<br>
+            от Shoutem на 3.10.2016, последно посетен на 05.04.2020</div>
+            <div class="source">
             <a href="https://reactnative.dev/">[6] https://reactnative.dev/</a> Официален сайт на React Native, последно
-            посетен на 05.04.2020<br>
+            посетен на 05.04.2020</div>
+            <div class="source">
             <a href="https://reactjs.org/docs/getting-started.html">[7]
                 https://reactjs.org/docs/getting-started.html</a> Официална документация на ReactJS. Oт тук са взети и
             примерите със сорс код, последно посетен на
-            09.04.20<br>
+            09.04.20</div>
+            <div class="source">
             <a
                 href="https://www.infoworld.com/article/2608181/react--making-faster--smoother-uis-for-data-driven-web-apps.html">[8]
                 https://www.infoworld.com/article/2608181/react--making-faster--smoother-uis-for-data-driven-web-apps.html
-            </a> Написана на 15.05.2014 от Paul Krill, последно посетен на 08.04.20<br>
+            </a> Написана на 15.05.2014 от Paul Krill, последно посетен на 08.04.20</div>
+            <div class="source">
             <a href="https://reactjs.org/docs/faq-internals.html">[9]
                 https://reactjs.org/docs/faq-internals.html</a>Част от официалната документация, описваща в по-големи
-            детайли работата с VDOM, последно посетена на 08.04.20<br>
+            детайли работата с VDOM, последно посетена на 08.04.20</div>
+            <div class="source">
             <a href="https://programmingwithmosh.com/javascript/stateful-stateless-components-react/">[10]
                 https://programmingwithmosh.com/javascript/stateful-stateless-components-react/</a>
-            Написана на 10.04.2019 от Mosh Hamedani, последно посетена на 09.04.20<br>
+            Написана на 10.04.2019 от Mosh Hamedani, последно посетена на 09.04.20</div>
+            <div class="source">
             <a href="https://www.valentinog.com/blog/await-react/">[11] https://www.valentinog.com/blog/await-react/</a>
-            Написана на 7.02.2020 от Valentino Gagliardi, последно посетена на 10.04.20<br>
+            Написана на 7.02.2020 от Valentino Gagliardi, последно посетена на 10.04.20</div>
+            <div class="source">
             <a href="https://www.valentinog.com/blog/redux/">[12] https://www.valentinog.com/blog/redux/</a>
-            Написана на 10.03.2020 от Valentino Gagliardi, последно посетена на 10.04.20<br>
+            Написана на 10.03.2020 от Valentino Gagliardi, последно посетена на 10.04.20</div>
+            <div class="source">
             <a href="https://reacttraining.com/react-router/">[13] https://reacttraining.com/react-router/</a>
-            Официална документация на React Router, последно посетена на 10.04.20<br>
+            Официална документация на React Router, последно посетена на 10.04.20</div>
+            <div class="source">
             <a href="https://react.semantic-ui.com/">[14] https://react.semantic-ui.com/</a> Официален сайт на Semantic
-            React, последно посетен на 10.04.20<br>
+            React, последно посетен на 10.04.20</div>
+            <div class="source">
             <a href="https://material-ui.com/">[15] https://material-ui.com/</a> Официален сайт на Mаterial UI, последно
-            посетен на 10.04.20<br>
+            посетен на 10.04.20</div>
+            <div class="source">
             <a href="https://stories.jotform.com/7-reasons-why-you-should-use-react-ad420c634247"> [16]
                 https://stories.jotform.com/7-reasons-why-you-should-use-react-ad420c634247</a>
             Написана на 27.01.2017 oт Kautlu Sahin, последно посетена на 10.04.20
-            <br>
+            </div>
         </div>
       </div>
 
