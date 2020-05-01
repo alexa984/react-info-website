@@ -106,3 +106,22 @@ ol, ul {
 #menu-content li:hover{
     background-color: rgba(0,0,0,0.19);
 }
+
+#read-button {
+    background-color: #483d8b;
+    padding: 10px 50px;
+    border: none;
+    border-radius: 50px;
+    margin-bottom: 30px;
+}
+
+#read-button:hover {
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.19);
+}
+
+#read-button a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14pt;
+}
