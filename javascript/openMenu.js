@@ -13,8 +13,10 @@ function toggleMenu() {
 
 // close menu if user clicks outside of it
 document.addEventListener("mouseup", function (e) {
-  let menu = document.getElementById("menu-content");
+  let menu = document.getElementById("menu");
+  let menuContent = document.getElementById("menu-content");
+
   if (!menu.contains(e.target)) {
-    menu.style.display = "none";
+    menuContent.style.display = "none";
   }
 });
