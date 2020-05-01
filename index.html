@@ -4,7 +4,6 @@
 <head>
     <title>66. React</title>
     <meta charset="UTF-8">
-    <meta name="author" content="Alexandra Yovkova">
     <meta name="keywords" content="React, JS, ReactJS, JavaScript, script, library, html">
     <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
@@ -21,6 +20,8 @@
                 <li><a href="#usage">Къде се използва и за какви цели?</a></li>
                 <li><a href="#dom-structure">DOM структура и как React работи с нея</a></li>
                 <li><a href="#basic-concepts">Основни концепции и примери</a></li>
+                <li><a href="#technologies">Свързани технологии</a></li>
+                <li><a href="#why-react">Защо React?</a></li>
             </ul>
         </div>
         <img src="img/React.png" alt="React" class="container-image" />
@@ -83,7 +84,16 @@
                 синхронизира с него чрез ReactDOM библиотеката например. Този процес се нарича
                 reconciliation. По този начин не се грижим за ръчна промяна на DOM елементите и прихващане
                 на някои събития, а единствено оказваме в какво състояние(state) искаме те да бъдат.
-                Библиотеката се грижи за останалото. Към момента с React 16 се използва Fiber като reconciliation
+                Библиотеката се грижи за останалото. Процесът на reconsiliation не взима обичайния алгоритъм със
+                сложност O(n^3),
+                който би рендерирал цялото дърво от реакт елементи и при промяна на стойност или състояние, да
+                пререндерира всичко.
+                Вместо това алгоритъмът, който се използва има сложност O(n). Този алгоритъм се базира на две важни
+                условия - 1) ако два
+                елемента са от различен тип, те ще произведат две различни дървета; 2) Програмистът може и би трябвало
+                да дефинира различен
+                key за деца от един и същ тип за да помогне на React да се справи по-бързо със сравнението.
+                Към момента с React 16 се използва Fiber като reconciliation
                 engine.<br /><br />
                 <img class="container-image" src="img/virt-dom.jpg" />
             </p>
@@ -182,13 +192,18 @@
                 mount-не във витруалното дърво. Обикновено ако не се инициализира състояние и не се използва binding на
                 методи, този метод не се имплементира.
                 Състоянието на компонентата не трябва да се променя(мутира) директно. За целта използваме
-                метода this.setState(), идващ от React.Component.
+                метода this.setState(), идващ от React.Component. Toй се изпълнява асинхронно в
+                event handlers. React изчаква докато всички зависими компоненти извикат своя setState в своите
+                event handlers и тогава започва пререндерирането. Това подсигурява, че ако и дете, и родител извикат
+                setState по време на събитието клик например, детето няма да се пререндерира два пъти, а само веднъж.
+                Това осигурява значително увеличение на производителността особено в големи приложения.
                 При промяна на състоянието на определена стойност, но не
                 на цялото състояние, отново използваме setState като подаваме обект, съдържащ само тази стойност. React
                 слива
                 текущото състояние и новото като заменя стойността, която вече съществува с новата.
                 <img class="container-image" src="img/react-state-merging.jpg" />
             </p>
+
             <p>
                 В горния пример забелязваме и метода componentDidMount. Това е един също ключов за
                 компонентата метод. Извиква се след като съдържанието на компонентата се е рендерирало върху
@@ -215,12 +230,149 @@
                 И за малко по-обща представа кое точно след кое се извършва, разгледайте следната диаграма:
                 <img class="container-image" src="img/react-component lifecycle-diagram.png" />
             </p>
+            <p>
+                В React 16.8 е въведена концепцията за така наречените hooks(куки).
+                Те позволяват да се използва състоянието на компонентата и други нейни функции без необходимостта да се
+                пише клас.
+                <img class="container-image" src="img/hooks-with-function.jpg" />
+                Тук главна роля играят функциите:<br>
+                <em>useState</em>, която връща стойност на променлива и setter за стойността ѝ.
+                Важно тук е hooks с useState да се извикват винаги в един и същ ред.<br>
+                <em>useEffect</em>, която приема callback функция и зависимости.<br>
+                Забележка: Не е добра идея да се използват hooks във второстепенни слоеве на компонентата като
+                условни изрази, цикли и т.н. и hook трбва да се вика само от React компонентни функции, но не и от
+                нормални функции или компоненти, имплементирани с клас.<br><br>
+                Ето и един пример за разликата в написването на една компонента без и със хуукове.
+                <figure>
+                    <img class="container-image" src='img/clicked-no-hooks.jpg' />
+                    <figcaption>No hooks</figcaption>
+                </figure>
+                <br>
+                <figure>
+                    <img class="container-image" src='img/clicked-with-hooks.jpg' />
+                    <figcaption>With hooks</figcaption>
+                </figure>
+            </p>
+            <p>При използване на hooks може да се разграничи малко по-различен метод на
+                обработка на събитията. Може да представим lifecycle диаграмата по следния начин:
+                <img class="container-image" src='img/lifecycle-with-hooks.jpg' />
+            </p>
+            <p>
+                Едно изключително приятно нещо в React за мен са async/await функциите. Те се поддържат от
+                версия 7.6.0 насам. Изключително употребявани са и в друга JavaScript среда - Node.js.
+                За хората писали JavaScript, така наречените promises са неотменна част от писането на код.
+                В React вместо писане на логиката за изчакване с promises и then, се използват горните две функции.
+                Със запазената дума async обозначаваме, че дадена функция се изпълнява асинхронно, но стигайки до
+                await казваме спри и изчакай да дойдат данните и тогава продължи изпълнението.
+                Aко използвайки promises, взимането на данни от някакво API в componentDidMount,
+                където казахме е най-подходящото място за такъв тип заявки, би изглеждало така:
+                <img class="container-image" src='img/async-with-promises.jpg' />
+                то използвайки async и await, би изглеждало по следния начин:
+                <img class="container-image" src='img/async-with-async-await.jpg' />
+            </p>
 
         </div>
         <div class="card">
-            <div class="paragraph-header">Основни концепции и примери</div>
+            <div class="paragraph-header">Свързани технологии</div>
             <hr class="divider" />
-            <p id="basic-concepts"></p>
+            <p id="technologies">
+                Нека споменем макар и с няколко думи някои технологии, които изключително често се използват в
+                практиката заедно с React.
+                <ol>
+                    <li>
+                        <em>React Router DOM</em> -
+                        набор от навигационни компоненти като Link, Route, Redirect и други.
+
+                    </li>
+                    <li>
+                        <em>Redux</em> - предоставя споделен "контейнер" за запазване на състоянието за повече от една
+                        компонента. Използва се в случаи на множество компоненти, зависещи от едно и също обще
+                        състояние. Състоянието е read-only и промените се извършват посредством функции.
+                        Удобно е за спестяване на ресурс като междувременно дава на всяка използваща компонента само
+                        това, което й трябва.
+                        Много хора го смятат за ненужно утежняване особено след като вече съществува context API в
+                        React.
+                    </li>
+                    <li>
+                        <em>Reflux</em> - сходно като идея на Redux. Използва actions и stores за да менажира кога
+                        компонента трябва да се промени. Основна причина за появата на този тип допълнителна архитектура
+                        е ограничението в базовата концепция на React за еднопосочен поток на данните - от главна към
+                        подчинена компонента, но не и обратно.
+                    </li>
+                    <li>
+                        <em>Semantic</em> - набор от готови стилизирани компоненти за приятен дизайн на страници.
+                    </li>
+                    <li>
+                        <em>Material</em> - сходно на Semantic, но с по-различен дизайн.
+                    </li>
+                </ol>
+            </p>
+        </div>
+        <div class="card">
+            <div class="paragraph-header">Защо React</div>
+            <hr class="divider" />
+            <p id="why-react">
+                <ol>
+                    <li>Прост и лесен за учене</li>
+                    <li>Преизползваемост на компонентите</li>
+                    <li>Бързина и ефикаснос на работа</li>
+                    <li>Широка употреба към момента</li>
+                    <li>Има повече от едно приложение - не само за уеб, но и мобилни приложения</li>
+                </ol>
+            </p>
+        </div>
+        <hr class="divider" />
+        <h2>Използвани източници:</h2>
+        <div id="sources">
+            <a href="https://www.taniarascia.com/getting-started-with-react/">[1]
+                https://www.taniarascia.com/getting-started-with-react/</a>
+            Написано на 20.08.2018 oт Tania Rascia, последно посетен на 05.04.2020
+            <br>
+            <a href="https://skillcrush.com/blog/what-is-react-js/">[2]
+                https://skillcrush.com/blog/what-is-react-js/</a>
+            Написано от Scott Morris, последно посетен на 05.04.2020
+            <br>
+            <a href="https://blog.risingstack.com/the-history-of-react-js-on-a-timeline">[3]
+                https://blog.risingstack.com/the-history-of-react-js-on-a-timeline</a> Написано от Ferenc Hamori,
+            последно посетен на 05.04.2020<br>
+            <a href="http://thenewstack.io/javascripts-history-and-how-it-led-to-reactjs/">[4]
+                http://thenewstack.io/javascripts-history-and-how-it-led-to-reactjs/</a>
+            Написано от Chris Dawson на 25.07.2014, последно посетен на 05.04.2020
+            <br>
+            <a href="https://medium.com/react-native-development/a-brief-history-of-react-native-aae11f4ca39">[5]
+                https://medium.com/react-native-development/a-brief-history-of-react-native-aae11f4ca39</a>
+            Написано
+            от Shoutem на 3.10.2016, последно посетен на 05.04.2020<br>
+            <a href="https://reactnative.dev/">[6] https://reactnative.dev/</a> Официален сайт на React Native, последно
+            посетен на 05.04.2020<br>
+            <a href="https://reactjs.org/docs/getting-started.html">[7]
+                https://reactjs.org/docs/getting-started.html</a> Официална документация на ReactJS. Oт тук са взети и
+            примерите със сорс код, последно посетен на
+            09.04.20<br>
+            <a
+                href="https://www.infoworld.com/article/2608181/react--making-faster--smoother-uis-for-data-driven-web-apps.html">[8]
+                https://www.infoworld.com/article/2608181/react--making-faster--smoother-uis-for-data-driven-web-apps.html
+            </a> Написана на 15.05.2014 от Paul Krill, последно посетен на 08.04.20<br>
+            <a href="https://reactjs.org/docs/faq-internals.html">[9]
+                https://reactjs.org/docs/faq-internals.html</a>Част от официалната документация, описваща в по-големи
+            детайли работата с VDOM, последно посетена на 08.04.20<br>
+            <a href="https://programmingwithmosh.com/javascript/stateful-stateless-components-react/">[10]
+                https://programmingwithmosh.com/javascript/stateful-stateless-components-react/</a>
+            Написана на 10.04.2019 от Mosh Hamedani, последно посетена на 09.04.20<br>
+            <a href="https://www.valentinog.com/blog/await-react/">[11] https://www.valentinog.com/blog/await-react/</a>
+            Написана на 7.02.2020 от Valentino Gagliardi, последно посетена на 10.04.20<br>
+            <a href="https://www.valentinog.com/blog/redux/">[12] https://www.valentinog.com/blog/redux/</a>
+            Написана на 10.03.2020 от Valentino Gagliardi, последно посетена на 10.04.20<br>
+            <a href="https://reacttraining.com/react-router/">[13] https://reacttraining.com/react-router/</a>
+            Официална документация на React Router, последно посетена на 10.04.20<br>
+            <a href="https://react.semantic-ui.com/">[14] https://react.semantic-ui.com/</a> Официален сайт на Semantic
+            React, последно посетен на 10.04.20<br>
+            <a href="https://material-ui.com/">[15] https://material-ui.com/</a> Официален сайт на Mаterial UI, последно
+            посетен на 10.04.20<br>
+            <a href="https://stories.jotform.com/7-reasons-why-you-should-use-react-ad420c634247"> [16]
+                https://stories.jotform.com/7-reasons-why-you-should-use-react-ad420c634247</a>
+            Написана на 27.01.2017 oт Kautlu Sahin, последно посетена на 10.04.20
+            <br>
         </div>
     </div>
 </body>
