@@ -40,7 +40,7 @@ ol, ul {
 .card {
     padding: 5% 10%;
     background-color: white;
-    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.19),0 4px 20px 0 rgba(0,0,0,0.19);
     margin: 5% 0%;
 }
 
@@ -89,13 +89,20 @@ ol, ul {
     position: absolute;
     background-color: white;
     width: 300px;
-    margin: 30px 0px 0px -300px;
-    padding: 30px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-
+    margin: 30px 0px 0px -270px;
+    padding: 10px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.19);
+    border-radius: 0px 0px 10px 10px;
     z-index: 1;
+}
+#menu-content li {
+    padding: 0px 10px;
 }
 
 #menu:hover #menu-content {
     display: block;
+}
+
+#menu-content li:hover{
+    background-color: rgba(0,0,0,0.19);
 }
