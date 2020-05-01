@@ -1,9 +1,20 @@
-function openMenu() {
-  let currentDisplayStyle = document.getElementById("menu-content").style
-    .display;
+function toggleMenu() {
+  let menu = document.getElementById("menu-content");
+  let currentDisplayStyle = menu.style.display;
+
   if (currentDisplayStyle === "block") {
-    document.getElementById("menu-content").style.display = "none";
+    // If menu is open, close it
+    menu.style.display = "none";
   } else {
-    document.getElementById("menu-content").style.display = "block";
+    // If menu is closed, openIt
+    menu.style.display = "block";
   }
 }
+
+// close menu if user clicks outside of it
+document.addEventListener("mouseup", function (e) {
+  let menu = document.getElementById("menu-content");
+  if (!menu.contains(e.target)) {
+    menu.style.display = "none";
+  }
+});
