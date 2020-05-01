@@ -5,30 +5,30 @@
     <title>66. React</title>
     <meta charset="UTF-8">
     <meta name="keywords" content="React, JS, ReactJS, JavaScript, script, library, html">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel="stylesheet" type="text/css" href="css/content.css">
-    <script src="javascript/openMenu.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/content.css">
+    <script src="../javascript/openMenu.js"></script>
 </head>
 
 <body>
-  <div class="navbar">
-    <h1 id="title"><a href="index.html">66. ReactJS</a></h1>
-    <div id="menu">
-        <img src="img/hamburger_menu.png" alt="menu" onclick="toggleMenu()" />
-        <div id="menu-content">
-            <ul class="no-bullets">
-                <li><a href="#overview">Въведение</a></li>
-                <li><a href="#history">История</a></li>
-                <li><a href="#usage">Къде се използва и за какви цели?</a></li>
-                <li><a href="#dom-structure">DOM структура и как React работи с нея</a></li>
-                <li><a href="#basic-concepts">Основни концепции и примери</a></li>
-                <li><a href="#technologies">Свързани технологии</a></li>
-                <li><a href="#why-react">Защо React?</a></li>
-            </ul>
+    <div class="navbar">
+        <h1 id="title"><a href="../referat.html">66. ReactJS</a></h1>
+        <div id="menu">
+            <img src="../img/hamburger_menu.png" alt="menu" onclick="toggleMenu()" />
+            <div id="menu-content">
+                <ul class="no-bullets">
+                    <li><a href="#overview">Въведение</a></li>
+                    <li><a href="#history">История</a></li>
+                    <li><a href="#usage">Къде се използва и за какви цели?</a></li>
+                    <li><a href="#dom-structure">DOM структура и как React работи с нея</a></li>
+                    <li><a href="#basic-concepts">Основни концепции и примери</a></li>
+                    <li><a href="#technologies">Свързани технологии</a></li>
+                    <li><a href="#why-react">Защо React?</a></li>
+                </ul>
+            </div>
         </div>
     </div>
-</div>
-</div>
+    </div>
 
     <div class="container">
         <div class="card">
@@ -100,7 +100,7 @@
                 key за деца от един и същ тип за да помогне на React да се справи по-бързо със сравнението.
                 Към момента с React 16 се използва Fiber като reconciliation
                 engine.<br /><br />
-                <img class="container-image" src="img/virt-dom.jpg" />
+                <img class="container-image" src="../img/virt-dom.jpg" />
             </p>
         </div>
         <div class="card">
@@ -110,7 +110,7 @@
                 Едно от главните неща в React е начинът, по който се движат данните и събитията между компонентите.
                 Данните винаги се движат в посока потребителски данни -> родителска компонента -> дъщерна компонента,
                 а потокът на събития съответно е в обратен ред.
-                <img class="container-image" src="img/flow.jpg" />
+                <img class="container-image" src="../img/flow.jpg" />
                 Главна структурна концепция в React е тази за използване на компоненти.
                 Вместо изкуствено да се разделят технологиите чрез разделяне на логиката и маркъп частта в отделни
                 файлове, в React работата се разделя между слабо зависими помежду си части, наречени компоненти. Те са
@@ -119,7 +119,7 @@
                 <br />
                 Но преди компонентите – нещо малко по-просто. Ако искате да присвоите html код на променлива, това е
                 напълно възможно със следния синтаксис: <br /><br />
-                <img class="container-image" src="img/jsx-sample.jpg" />
+                <img class="container-image" src="../img/jsx-sample.jpg" />
                 Това обаче не е нито html, нито символен низ. Това е така нареченият JSX. React използва това
                 надграждане над JavaScript за да създаде своите елементи, изграждащи копонентите. Разбира се не е
                 задължително една компонента да съдържа JSX, но за да носи тя някакъв визуален смисъл – обикновено това
@@ -131,7 +131,7 @@
                 всякакъв валиден JavaScript израз посредством ограждането му с {}. Този израз може да е променлива,
                 дефинирана по-рано, извикване на функция, математически израз или друго.
                 <br />
-                <img class="container-image" src='img/jsx-sample-with-js-expr.jpg' />
+                <img class="container-image" src='../img/jsx-sample-with-js-expr.jpg' />
                 Друго нещо, което може да се забележи в горния пример е начинът на рендериране на елемент в DOM дървото.
                 На ReactDOM.render функцията се подава съответният елемент, който искаме да покажем. React елементите в
                 дървото концептуално не се променят. Те представляват конкретна своя фаза в даден момент – също като
@@ -150,11 +150,11 @@
                 <br />
                 Kомпонента може да се дефинира по няколко различни начина – с функция или посредством клас.<br><br>
                 <figure>
-                    <img class="container-image" src='img/component-using-function.jpg' />
+                    <img class="container-image" src='../img/component-using-function.jpg' />
                     <figcaption>Чрез функция</figcaption>
                 </figure>
                 <figure>
-                    <img class="container-image" src='img/component-using-class.jpg' />
+                    <img class="container-image" src='../img/component-using-class.jpg' />
                     <figcaption>Чрез клас</figcaption>
                 </figure>
             </p>
@@ -177,7 +177,7 @@
                 Когато React види елемент, репрезентиращ собствена компонента, той подава
                 всички JSX атрибути към тази компонента като единствен обект, наречен props.
                 Тези props не трябва да бъдат модифицирани!
-                <img class="container-image" src="img/composite-component-with-props.jpg" />
+                <img class="container-image" src="../img/composite-component-with-props.jpg" />
                 Горният пример също показва и вграждането на собствени компоненти една в друга - едно също много удобно
                 свойство, позволяващо по-голяма преизползваемост.
             </p>
@@ -189,7 +189,7 @@
                 Състоянието на компонентата представлява обикновен JavaScript обект. Ако дадена стойност не се
                 използва
                 за рендериране или управление на потока от данни, то не е нужно да се слага в state.
-                <img class="container-image" src="img/react-state.jpg" />
+                <img class="container-image" src="../img/react-state.jpg" />
                 Местата, където може да се дефинира state са в scope-a на класа извън други методи, обикновено в
                 началото на дефиницията на класа, или
                 в конструктора на класа.
@@ -206,7 +206,7 @@
                 на цялото състояние, отново използваме setState като подаваме обект, съдържащ само тази стойност. React
                 слива
                 текущото състояние и новото като заменя стойността, която вече съществува с новата.
-                <img class="container-image" src="img/react-state-merging.jpg" />
+                <img class="container-image" src="../img/react-state-merging.jpg" />
             </p>
 
             <p>
@@ -233,13 +233,13 @@
                 Тук е добре да се извършат всички възможни изчиствания като прекратяване на заявки например.
                 <br>
                 И за малко по-обща представа кое точно след кое се извършва, разгледайте следната диаграма:
-                <img class="container-image" src="img/react-component lifecycle-diagram.png" />
+                <img class="container-image" src="../img/react-component lifecycle-diagram.png" />
             </p>
             <p>
                 В React 16.8 е въведена концепцията за така наречените hooks(куки).
                 Те позволяват да се използва състоянието на компонентата и други нейни функции без необходимостта да се
                 пише клас.
-                <img class="container-image" src="img/hooks-with-function.jpg" />
+                <img class="container-image" src="../img/hooks-with-function.jpg" />
                 Тук главна роля играят функциите:<br>
                 <em>useState</em>, която връща стойност на променлива и setter за стойността ѝ.
                 Важно тук е hooks с useState да се извикват винаги в един и същ ред.<br>
@@ -249,18 +249,18 @@
                 нормални функции или компоненти, имплементирани с клас.<br><br>
                 Ето и един пример за разликата в написването на една компонента без и със хуукове.
                 <figure>
-                    <img class="container-image" src='img/clicked-no-hooks.jpg' />
+                    <img class="container-image" src='../img/clicked-no-hooks.jpg' />
                     <figcaption>No hooks</figcaption>
                 </figure>
                 <br>
                 <figure>
-                    <img class="container-image" src='img/clicked-with-hooks.jpg' />
+                    <img class="container-image" src='../img/clicked-with-hooks.jpg' />
                     <figcaption>With hooks</figcaption>
                 </figure>
             </p>
             <p>При използване на hooks може да се разграничи малко по-различен метод на
                 обработка на събитията. Може да представим lifecycle диаграмата по следния начин:
-                <img class="container-image" src='img/lifecycle-with-hooks.jpg' />
+                <img class="container-image" src='../img/lifecycle-with-hooks.jpg' />
             </p>
             <p>
                 Едно изключително приятно нещо в React за мен са async/await функциите. Те се поддържат от
@@ -271,9 +271,9 @@
                 await казваме спри и изчакай да дойдат данните и тогава продължи изпълнението.
                 Aко използвайки promises, взимането на данни от някакво API в componentDidMount,
                 където казахме е най-подходящото място за такъв тип заявки, би изглеждало така:
-                <img class="container-image" src='img/async-with-promises.jpg' />
+                <img class="container-image" src='../img/async-with-promises.jpg' />
                 то използвайки async и await, би изглеждало по следния начин:
-                <img class="container-image" src='img/async-with-async-await.jpg' />
+                <img class="container-image" src='../img/async-with-async-await.jpg' />
             </p>
 
         </div>
@@ -328,77 +328,84 @@
         </div>
 
         <div class="card">
-          <div class="paragraph-header">Използвани източници:</div>
-          <hr class="divider" />
-          <div id="sources">
-            <div class="source">
-            <a href="https://www.taniarascia.com/getting-started-with-react/">[1]
-                https://www.taniarascia.com/getting-started-with-react/</a>
-            Написано на 20.08.2018 oт Tania Rascia, последно посетен на 05.04.2020
-            </div>
-            <div class="source">
-            <a href="https://skillcrush.com/blog/what-is-react-js/">[2]
-                https://skillcrush.com/blog/what-is-react-js/</a>
-            Написано от Scott Morris, последно посетен на 05.04.2020
-            </div>
-            <div class="source">
-            <a href="https://blog.risingstack.com/the-history-of-react-js-on-a-timeline">[3]
-                https://blog.risingstack.com/the-history-of-react-js-on-a-timeline</a> Написано от Ferenc Hamori,
-            последно посетен на 05.04.2020
-          </div>
-          <div class="source">
-            <a href="http://thenewstack.io/javascripts-history-and-how-it-led-to-reactjs/">[4]
-                http://thenewstack.io/javascripts-history-and-how-it-led-to-reactjs/</a>
-            Написано от Chris Dawson на 25.07.2014, последно посетен на 05.04.2020
-            </div>
-            <div class="source">
-            <a href="https://medium.com/react-native-development/a-brief-history-of-react-native-aae11f4ca39">[5]
-                https://medium.com/react-native-development/a-brief-history-of-react-native-aae11f4ca39</a>
-            Написано
-            от Shoutem на 3.10.2016, последно посетен на 05.04.2020</div>
-            <div class="source">
-            <a href="https://reactnative.dev/">[6] https://reactnative.dev/</a> Официален сайт на React Native, последно
-            посетен на 05.04.2020</div>
-            <div class="source">
-            <a href="https://reactjs.org/docs/getting-started.html">[7]
-                https://reactjs.org/docs/getting-started.html</a> Официална документация на ReactJS. Oт тук са взети и
-            примерите със сорс код, последно посетен на
-            09.04.20</div>
-            <div class="source">
-            <a
-                href="https://www.infoworld.com/article/2608181/react--making-faster--smoother-uis-for-data-driven-web-apps.html">[8]
-                https://www.infoworld.com/article/2608181/react--making-faster--smoother-uis-for-data-driven-web-apps.html
-            </a> Написана на 15.05.2014 от Paul Krill, последно посетен на 08.04.20</div>
-            <div class="source">
-            <a href="https://reactjs.org/docs/faq-internals.html">[9]
-                https://reactjs.org/docs/faq-internals.html</a>Част от официалната документация, описваща в по-големи
-            детайли работата с VDOM, последно посетена на 08.04.20</div>
-            <div class="source">
-            <a href="https://programmingwithmosh.com/javascript/stateful-stateless-components-react/">[10]
-                https://programmingwithmosh.com/javascript/stateful-stateless-components-react/</a>
-            Написана на 10.04.2019 от Mosh Hamedani, последно посетена на 09.04.20</div>
-            <div class="source">
-            <a href="https://www.valentinog.com/blog/await-react/">[11] https://www.valentinog.com/blog/await-react/</a>
-            Написана на 7.02.2020 от Valentino Gagliardi, последно посетена на 10.04.20</div>
-            <div class="source">
-            <a href="https://www.valentinog.com/blog/redux/">[12] https://www.valentinog.com/blog/redux/</a>
-            Написана на 10.03.2020 от Valentino Gagliardi, последно посетена на 10.04.20</div>
-            <div class="source">
-            <a href="https://reacttraining.com/react-router/">[13] https://reacttraining.com/react-router/</a>
-            Официална документация на React Router, последно посетена на 10.04.20</div>
-            <div class="source">
-            <a href="https://react.semantic-ui.com/">[14] https://react.semantic-ui.com/</a> Официален сайт на Semantic
-            React, последно посетен на 10.04.20</div>
-            <div class="source">
-            <a href="https://material-ui.com/">[15] https://material-ui.com/</a> Официален сайт на Mаterial UI, последно
-            посетен на 10.04.20</div>
-            <div class="source">
-            <a href="https://stories.jotform.com/7-reasons-why-you-should-use-react-ad420c634247"> [16]
-                https://stories.jotform.com/7-reasons-why-you-should-use-react-ad420c634247</a>
-            Написана на 27.01.2017 oт Kautlu Sahin, последно посетена на 10.04.20
+            <div class="paragraph-header">Използвани източници:</div>
+            <hr class="divider" />
+            <div id="sources">
+                <div class="source">
+                    <a href="https://www.taniarascia.com/getting-started-with-react/">[1]
+                        https://www.taniarascia.com/getting-started-with-react/</a>
+                    Написано на 20.08.2018 oт Tania Rascia, последно посетен на 05.04.2020
+                </div>
+                <div class="source">
+                    <a href="https://skillcrush.com/blog/what-is-react-js/">[2]
+                        https://skillcrush.com/blog/what-is-react-js/</a>
+                    Написано от Scott Morris, последно посетен на 05.04.2020
+                </div>
+                <div class="source">
+                    <a href="https://blog.risingstack.com/the-history-of-react-js-on-a-timeline">[3]
+                        https://blog.risingstack.com/the-history-of-react-js-on-a-timeline</a> Написано от Ferenc
+                    Hamori,
+                    последно посетен на 05.04.2020
+                </div>
+                <div class="source">
+                    <a href="http://thenewstack.io/javascripts-history-and-how-it-led-to-reactjs/">[4]
+                        http://thenewstack.io/javascripts-history-and-how-it-led-to-reactjs/</a>
+                    Написано от Chris Dawson на 25.07.2014, последно посетен на 05.04.2020
+                </div>
+                <div class="source">
+                    <a href="https://medium.com/react-native-development/a-brief-history-of-react-native-aae11f4ca39">[5]
+                        https://medium.com/react-native-development/a-brief-history-of-react-native-aae11f4ca39</a>
+                    Написано
+                    от Shoutem на 3.10.2016, последно посетен на 05.04.2020</div>
+                <div class="source">
+                    <a href="https://reactnative.dev/">[6] https://reactnative.dev/</a> Официален сайт на React Native,
+                    последно
+                    посетен на 05.04.2020</div>
+                <div class="source">
+                    <a href="https://reactjs.org/docs/getting-started.html">[7]
+                        https://reactjs.org/docs/getting-started.html</a> Официална документация на ReactJS. Oт тук са
+                    взети и
+                    примерите със сорс код, последно посетен на
+                    09.04.20</div>
+                <div class="source">
+                    <a
+                        href="https://www.infoworld.com/article/2608181/react--making-faster--smoother-uis-for-data-driven-web-apps.html">[8]
+                        https://www.infoworld.com/article/2608181/react--making-faster--smoother-uis-for-data-driven-web-apps.html
+                    </a> Написана на 15.05.2014 от Paul Krill, последно посетен на 08.04.20</div>
+                <div class="source">
+                    <a href="https://reactjs.org/docs/faq-internals.html">[9]
+                        https://reactjs.org/docs/faq-internals.html</a>Част от официалната документация, описваща в
+                    по-големи
+                    детайли работата с VDOM, последно посетена на 08.04.20</div>
+                <div class="source">
+                    <a href="https://programmingwithmosh.com/javascript/stateful-stateless-components-react/">[10]
+                        https://programmingwithmosh.com/javascript/stateful-stateless-components-react/</a>
+                    Написана на 10.04.2019 от Mosh Hamedani, последно посетена на 09.04.20</div>
+                <div class="source">
+                    <a href="https://www.valentinog.com/blog/await-react/">[11]
+                        https://www.valentinog.com/blog/await-react/</a>
+                    Написана на 7.02.2020 от Valentino Gagliardi, последно посетена на 10.04.20</div>
+                <div class="source">
+                    <a href="https://www.valentinog.com/blog/redux/">[12] https://www.valentinog.com/blog/redux/</a>
+                    Написана на 10.03.2020 от Valentino Gagliardi, последно посетена на 10.04.20</div>
+                <div class="source">
+                    <a href="https://reacttraining.com/react-router/">[13] https://reacttraining.com/react-router/</a>
+                    Официална документация на React Router, последно посетена на 10.04.20</div>
+                <div class="source">
+                    <a href="https://react.semantic-ui.com/">[14] https://react.semantic-ui.com/</a> Официален сайт на
+                    Semantic
+                    React, последно посетен на 10.04.20</div>
+                <div class="source">
+                    <a href="https://material-ui.com/">[15] https://material-ui.com/</a> Официален сайт на Mаterial UI,
+                    последно
+                    посетен на 10.04.20</div>
+                <div class="source">
+                    <a href="https://stories.jotform.com/7-reasons-why-you-should-use-react-ad420c634247"> [16]
+                        https://stories.jotform.com/7-reasons-why-you-should-use-react-ad420c634247</a>
+                    Написана на 27.01.2017 oт Kautlu Sahin, последно посетена на 10.04.20
+                </div>
             </div>
         </div>
-      </div>
 
     </div>
 </body>
