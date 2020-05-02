@@ -95,12 +95,8 @@ ol, ul {
     border-radius: 0px 0px 10px 10px;
     z-index: 1;
 }
-#menu-content li {
+#menu-content ul {
     padding: 0px 10px;
-}
-
-#menu:hover #menu-content {
-    display: block;
 }
 
 #menu-content li:hover{
