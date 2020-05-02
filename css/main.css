@@ -121,3 +121,11 @@ ol, ul {
     font-weight: bold;
     font-size: 14pt;
 }
+
+#author {
+    width: 100%;
+    font-size: 1.2em;
+    margin-top: 10px;
+    font-weight: bold;
+    text-align: right;
+}
